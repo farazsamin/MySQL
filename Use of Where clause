@@ -16,3 +16,6 @@ insert into student values
 (4,"dhk",54);
 
 select * from student where marks>80 and city="dhk";
+
+/* Find result marks from 81 to 89 */
+select * from student where marks between 81 and 89;
