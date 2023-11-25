@@ -1,0 +1,16 @@
+/* Check use */
+
+create database varsity; 
+use varsity; 
+
+create table student(
+	id int primary key,
+    age int check (age>=18)
+);
+
+/* error while outputting 11 */
+insert into student values 
+(1,11),
+(2,19); 
+
+select * from student; 
