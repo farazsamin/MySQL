@@ -1,0 +1,26 @@
+/* Sub Queries & View*/
+
+create database varsity; 
+use varsity; 
+
+create table student(
+	id int primary key,
+    name varchar(34),
+    marks int
+);
+
+insert into student values 
+(1,"adam", 89), 
+(2,"bob", 88), 
+(3,"cas",40);
+
+/* Sub Query to find avg */ 
+
+select * from student where marks > (select avg(marks) from student);
+
+
+/* create & Use view. Delete of view wont affect DB */
+create view info 
+as select id,marks from student; 
+
+select * from info; 
