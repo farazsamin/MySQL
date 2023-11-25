@@ -1,0 +1,18 @@
+/* Use of Where clause . Use of And, OR */
+
+create database varsity; 
+use varsity; 
+
+create table student(
+	id int primary key,
+    city varchar(34),
+    marks int
+);
+
+insert into student values 
+(1,"ctg",81),
+(2,"ctg",67),
+(3,"dhk",89),
+(4,"dhk",54);
+
+select * from student where marks>80 and city="dhk";
