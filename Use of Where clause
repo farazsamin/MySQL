@@ -19,3 +19,9 @@ select * from student where marks>80 and city="dhk";
 
 /* Find result marks from 81 to 89 */
 select * from student where marks between 81 and 89;
+
+/* Match  Value from array. */
+select * from student where city in("ctg","cumilla");
+
+/* Not Matched  Value from array. */
+select * from student where city not in("ctg","cumilla");
