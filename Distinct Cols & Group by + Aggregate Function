@@ -1,0 +1,17 @@
+/* Choose DISTINCT Column value & count using Group by */
+
+create database varsity; 
+use varsity; 
+
+create table student(
+	id int primary key,
+    city varchar(34)
+);
+
+insert into student values 
+(1,"Ctg"),
+(2,"Dhk"),
+(3,"Ctg");
+
+/* Aggregate function: Count */
+select distinct city,count(id) from student group by city;  
