@@ -1,0 +1,53 @@
+/*  Union vs Union all*/
+
+create database varsity; 
+use varsity; 
+
+create table student(
+	id int primary key,
+    subject varchar(34)
+);
+
+insert into student values 
+(1,"science"),
+(2,"arts"),
+(3,"commerce"), 
+(5,"extra");
+
+
+create table info(
+	id int primary key, 
+    city varchar(23)
+);
+
+insert into info values 
+(1,"ctg"), 
+(3,"dhk");
+
+/* Common value */
+select * from student 
+inner join info 
+on student.id = info.id;
+
+
+/* All without repeat  */
+select * from student 
+left join info 
+on student.id = info.id
+Union 
+select * from student 
+right join info 
+on student.id = info.id;
+
+/* All with repeat */
+select * from student 
+left join info 
+on student.id = info.id
+Union all
+select * from student 
+right join info 
+on student.id = info.id;
+
+
+
+
