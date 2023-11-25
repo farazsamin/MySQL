@@ -1,0 +1,39 @@
+/* Foreign Key & Cascading */
+
+create database varsity; 
+use varsity; 
+
+/* Parent table */ 
+create table course(
+	id int primary key,
+    name varchar(34)
+);
+
+insert into course values 
+(1,"cse"),
+(2,"eee"); 
+
+select * from course; 
+
+/* Child table */ 
+create table student(
+	id int primary key,
+    name varchar(23), 
+    course_id int,
+    foreign key(course_id) references course(id)
+    /*update and delete value accourding to parent table */
+    on update cascade 
+    on delete cascade
+);
+
+insert into student values 
+(101,"adam",1),
+(102,"bob",2);
+
+select * from student;
+
+/* Updating parent table & will affect on child table */
+set sql_safe_updates =0;
+update course 
+set id =3 
+where name ="cse";
