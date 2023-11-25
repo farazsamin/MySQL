@@ -1,0 +1,24 @@
+/* Use of Having clause*/
+
+create database varsity; 
+use varsity; 
+
+create table student(
+	id int primary key,
+    subject varchar(34)
+
+);
+
+insert into student values 
+(1,"science"),
+(2,"arts"),
+(3,"arts"),
+(4,"science");
+
+/* Use of having clause */
+select subject,count(id) from student group by subject  having subject = "science";
+
+/* Can use where */ 
+select subject,count(id) from student where subject ="science";
+
+
