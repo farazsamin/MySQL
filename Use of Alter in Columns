@@ -25,6 +25,10 @@ change column age AGE int;
 alter table student 
 drop column AGE;
 
+/* Rename Table*/ 
+alter table student 
+rename to stu;
+
 insert into student values 
 (1,"science"),
 (2,"arts"),
