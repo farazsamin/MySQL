@@ -1,0 +1,64 @@
+/* Use of Join*/
+
+create database varsity; 
+use varsity; 
+
+create table student(
+	id int primary key,
+    subject varchar(34)
+);
+
+insert into student values 
+(1,"science"),
+(2,"arts"),
+(3,"commerce"), 
+(5,"extra");
+
+
+create table info(
+	id int primary key, 
+    city varchar(23)
+);
+
+insert into info values 
+(1,"ctg"), 
+(3,"dhk");
+
+/* Common value */
+select * from student 
+inner join info 
+on student.id = info.id;
+
+/* Left + common */
+select * from student 
+left join info 
+on student.id = info.id;
+
+
+/* Right + common  */
+select * from student 
+right join info 
+on student.id = info.id;
+
+/* All  */
+select * from student 
+left join info 
+on student.id = info.id
+Union 
+select * from student 
+right join info 
+on student.id = info.id;
+
+/* Left Exclusive join (Only left,no common) */
+select * from student 
+left join info 
+on student.id = info.id
+where info.id is null;
+
+/* Right Exclusive join (Only right,no common) */
+select * from student 
+right join info 
+on student.id = info.id
+where student.id is null;
+
+
