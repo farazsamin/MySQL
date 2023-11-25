@@ -1,0 +1,30 @@
+/* Create DB,Table & CRUD Operation */
+
+create database varsity; 
+use varsity; 
+
+create table student(
+	id int primary key,
+    name varchar(23), 
+    marks int
+);
+
+insert into student values 
+(1,"adam",78), 
+(2,"bob",89), 
+(3,"cas",81); 
+
+select * from student;
+
+/* Update marks of ID = 3 from 81 to 88 */ 
+update student 
+set marks=88 
+where id=3; 
+
+select * from student;
+
+/* delelte table data + structure  */
+drop table student; 
+
+/* Delete only table data, Structure will remain*/
+truncate table student;
