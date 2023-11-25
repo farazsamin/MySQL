@@ -1,0 +1,22 @@
+/* Use of Order by, Limit*/
+
+create database varsity; 
+use varsity; 
+
+create table student(
+	id int primary key,
+    subject varchar(34)
+
+);
+
+insert into student values 
+(1,"science"),
+(2,"arts"),
+(3,"arts"),
+(4,"science");
+
+/*Showing result from higher no to lower */
+select subject,count(id) from student group by subject order by subject desc;
+
+/* Showing only 1 result */
+select subject,count(id) from student group by subject order by subject desc limit 1;
